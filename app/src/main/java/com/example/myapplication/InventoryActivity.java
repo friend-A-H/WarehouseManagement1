@@ -91,8 +91,8 @@ public class InventoryActivity extends AppCompatActivity {
                 if(searchGridNum > 11 || searchGridNum < 0){
                     Toast ts = Toast.makeText(InventoryActivity.this,"输入的货位号不正确",Toast.LENGTH_SHORT);
                     ts.show();
-                    searchClothIDResultTextView.setText("服装ID：");
-                    searchClothNumResultTextView.setText("服装数量：");
+                    searchClothIDResultTextView.setText("服装ID： ");
+                    searchClothNumResultTextView.setText("服装数量： ");
                 }
 
                 if(searchShelfID.equals("A")) searchShelfNum = 0;
