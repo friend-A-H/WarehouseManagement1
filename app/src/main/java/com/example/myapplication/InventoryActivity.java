@@ -138,7 +138,7 @@ public class InventoryActivity extends AppCompatActivity {
                             goodShelves.get(searchShelfNum).getGoodGrids().get(searchGridNum).setClothNumber(resetClothNum);
                         }
                         else if(resetClothNum == 0){
-                            lossReport.addRecord(searchShelfID, searchGridID, resetClothID, searchClothNum);
+                            lossReport.addRecord(searchShelfID, searchGridID, searchClothID, 0 - searchClothNum);
                             goodShelves.get(searchShelfNum).getGoodGrids().get(searchGridNum).setClothID(null);
                             goodShelves.get(searchShelfNum).getGoodGrids().get(searchGridNum).setClothNumber(0);
                         }
@@ -188,7 +188,7 @@ public class InventoryActivity extends AppCompatActivity {
             }
             else{
                 profitReport.addRecord(searchShelfID, searchGridID, resetClothID, resetClothNum);
-                lossReport.addRecord(searchShelfID, searchGridID, resetClothID, 0 - searchClothNum);
+                lossReport.addRecord(searchShelfID, searchGridID, searchClothID, 0 - searchClothNum);
             }
         }
     }

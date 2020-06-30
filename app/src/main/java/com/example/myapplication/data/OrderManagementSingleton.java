@@ -38,8 +38,14 @@ public class OrderManagementSingleton {
             for(int j = 0; j < random.nextInt(5)+1; j++){
                 index = random.nextInt(allClothID.size());
                 if(warehouse.searchClothNumByID(allClothID.get(index)) != 0){
-                    OrderItem orderItem = new OrderItem(allClothID.get(index), random.nextInt(warehouse.searchClothNumByID(allClothID.get(index)) - 1)+1);
-                    orderItems.add(orderItem);
+                    if(warehouse.searchClothNumByID(allClothID.get(index)) == 1) {
+                        OrderItem orderItem = new OrderItem(allClothID.get(index), 1);
+                        orderItems.add(orderItem);
+                    }
+                    else{
+                        OrderItem orderItem = new OrderItem(allClothID.get(index), random.nextInt(warehouse.searchClothNumByID(allClothID.get(index)) - 1)+1);
+                        orderItems.add(orderItem);
+                    }
                 }
                 else j--;
                 allClothID.remove(index);
